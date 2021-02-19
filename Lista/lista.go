@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
 
 var lista []string
 var preco []float32
@@ -39,4 +44,5 @@ func main() {
 	}
 	fmt.Printf("Valor Total: %f", total)
 
+	bufio.NewReader(os.Stdin).ReadBytes('\n')
 }
