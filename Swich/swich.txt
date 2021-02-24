@@ -1,0 +1,11 @@
+Swich em GO possui a sintaxe parecida com a maioria das liguagens, porem
+com a peculiaridade de não precisar usar o comando "break" que é usado parecida
+sair do swich quando um case é verdadeiro.
+
+como GO é fortemente tipado, no exemplo acima, criamos uma função que recebe
+parâmetro int e retorna um string. logo, em todos os casos precisa retornar uma 
+string conforme determinado no retorno da função.
+
+Caso oparâmetro não esteja dentro das condições do case, não haverá retorno,
+e o GO retornara um erro, para que isso não aconteça definimos a clausula "default"
+que determina o retorno caso nenhuma condição case seja verdadeira.
