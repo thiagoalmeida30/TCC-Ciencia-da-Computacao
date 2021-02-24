@@ -9,3 +9,4 @@ string conforme determinado no retorno da função.
 Caso oparâmetro não esteja dentro das condições do case, não haverá retorno,
 e o GO retornara um erro, para que isso não aconteça definimos a clausula "default"
 que determina o retorno caso nenhuma condição case seja verdadeira.
+Existe uma cláusula fulltrhoug que quando definida faz a entrada passar para o case seguinte.
