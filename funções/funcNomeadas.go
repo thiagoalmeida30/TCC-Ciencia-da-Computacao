@@ -15,4 +15,5 @@ fmt.Printf("A soma é: %d \n", soma1)
 fmt.Printf("A subtração é: %d \n", subtracao1)
 }
 
-/*Funções com retorno nomeado, são funções onde o retorno já declara a variável no parâmetro aí invés de apenas declarar o tipo do retorno*/
+/*Funções com retorno nomeado, são funções onde o retorno já declara 
+a variável no parâmetro aí invés de apenas declarar o tipo do retorno*/
