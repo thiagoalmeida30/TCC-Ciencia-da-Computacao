@@ -1,0 +1,9 @@
+    Em go só temos um tipo de loop que é o FOR, diferentemente da maioria das linguagens que tem por exemplo "Whille" e "do whille"
+por exemplo.
+    A sintaxe é simples e objetiva, no exmplo usado, além do tradicional for, usamos o comando range, que retorna 2 valores
+um int que é o índice de um array ou um slice, e outro que vai ser do tipo do array ou slice a qual ele se refere.
+    No caso o array de 4 posições do tipo string com valores já definidos, usamos o for para, com o comando range, percorrermos
+o array e imprimir o valor, o valor do indice foi suprimido ao usar "_" no lugar da variável, que em GO diz que aquela variável
+deverá ser ignorada já que o GO não permite criar uma variável e não a utilizar. 
+    Com o underline "_" o GO não deixa de atribuir o valor do índice a variavel, já que a função range retorna sempre 2 valores
+mas ele entende que não deve imprimir.

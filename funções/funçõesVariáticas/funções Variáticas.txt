@@ -1,0 +1,7 @@
+Essa função determina um parâmetro variável, ao invés de definir por exemplo várias variáveis, podemos usá-la 
+para definir um parâmetro variável de acordo com as entradas definidas após a declaração da função.
+
+No exemplo utilizado, criamos uma função variáticas de int, que retorna um int e no escopo dela existe um loop
+que usa a função range para percorrer o parâmetro que na verdade é um slice. Sendo um slice podemos usar a função
+range e, ignorando do índice com o underline, e utilizando a variável "total" para somar os valores do slice e 
+ao final retornar a soma dos valores do slice.
