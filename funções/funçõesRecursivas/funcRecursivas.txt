@@ -1,0 +1,9 @@
+Funções recursivas são aquelas que chamam a si própria durante a sua execução
+podemos usar por exemplo para imprimir uma posição da sequência de Fibonacci ou a sequência até um determinado
+indice.
+
+Importante numa função recursiva é implementar a condição de parada, pois sem a condição de parada a função
+será chamada criando um pilha de execulções até que haverá o estouro de pilha.
+
+no exeplo em questão criamos uma função recursiva que retorna o valor de uma posição da sequência de Fibonacci
+e na função principal imprimimos apenas o valor de uma posição e também toda sequência  até uma posição pré-determinada
