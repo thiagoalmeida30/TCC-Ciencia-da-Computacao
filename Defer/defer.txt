@@ -1,0 +1,35 @@
+A clausula defer adia a execução de determinado trecho de código ou de uma função.
+exemplo1:
+func main() {
+
+	func() {
+		defer fmt.Println("teste defer 1")
+		fmt.Println("teste defer 2")
+	}()
+
+}
+
+neste caso o defer mas com que seja impresso na tela primeiramente "teste defer 2" para depois imprimir "teste defer 1"
+caso tivesse outros comandos defer em outros println eles seriam impressos antes e por ultimo seria o trecho com defer.
+
+Agora no caso de uma função com retorno, o defer será adiado até a execuçãodo retorno, ou seja, antes de execultar um retorno
+ele execultará o defer.
+
+exemplo2:
+
+defer fmt.Println("A média foi calculada o resultado será retornado")
+		fmt.Println("Entrando na função media")
+	resultado:=func(n1, n2 float32) bool {
+
+		media:= (n1 + n2)/2
+
+		if media >= 5 {
+			return true
+		}
+			return false
+	
+	}(7,8)
+
+	fmt.Println(resultado)
+
+}
