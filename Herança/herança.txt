@@ -1,0 +1,21 @@
+Na verdade esse exemplo é o que o GO tem que  mais se aproxima de uma herança de uma liguagem 
+orientade a objetos.
+
+type pessoa struct{
+	nome string
+	sobrenome string
+	idade uint8
+	altura uint8
+}
+
+type estudante struct{
+	pessoa
+	matricula string
+	curso string
+	turno string
+}
+
+O trecho acima retirado do código fonte do exemplo heranca.go, mostra uma "herança" entre os structs.
+Pela lógica podemos deduzir que todo estudante é uma pessoa, logo possui as mesmas características que
+o primeiro struct pessoa possui, sendo assim não precisamos digitar novamente os mesmos atributos, apenas 
+utilizamos o struct pessoa como atributo do struct estudante.

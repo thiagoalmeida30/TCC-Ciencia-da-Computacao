@@ -1,0 +1,65 @@
+Ponteiros em GO é utilizado como na maioria das linguagens que o utilizam, o exemplo abaixo retirado do código fonte
+de ponteiros.go exemplifica o que acontece quando igualamos uma variável a outra sem usar ponteiros:
+
+func main() {
+
+	var variavel1 int = 10
+	var variavel2 int = variavel1
+
+	variavel1++
+
+	fmt.Println(variavel2)
+	fmt.Println(variavel1)
+
+}
+
+ao imprimir esse trecho, o resultado será:
+10
+11
+
+ou seja a variável2 é apenas uma cópia da versão inicial da variável, e mesmo alterando depois o valor da variavel1
+a variavel2 não é alterada, é ai que entra o ponteiro, o ponteiro apontara para o endereço de memória que está alocado
+avariável, assim caso a referida variável seja alterada, a outra variavel também será alterada. 
+
+* O ponteiro é uma referência de memória
+
+Exmplo.:
+
+var variavel3 int
+	var ponteiro *int
+
+	variavel3 = 100
+	ponteiro = &variavel3
+
+	fmt.Println(variavel3)
+	fmt.Println(ponteiro)
+
+    neste trecho do código criamos uma variavel chamada ponteiro e, como o GO é fortemente tipado, precisamos
+    declarar o tipo da variável porem o detalhe que identifica como ponteiro é o * assim a variável ponteiro é
+    do tipo *int.
+    Na declarção de valores, a variavel3 recebe o valor de 100 e a variável ponteiro precisa receber o endereço
+    de memória da variavel3. Essa declração, ponteiro = variavel3, está errada pois são tipos diferentes, *int e int,
+    sendo assim para realizar essa operação utilizamos o & para referenciar o endereço de memória da variável3
+
+    Na minha máquina obtive o seguinte resultado ao rodar o código no terminal:
+    100
+    0x0000120a8
+
+    100 é o valor da variável3 e 0x0000120a8 é o endereço de memória da variável3 que foi salva no ponteiro.
+    Agora para acessar o valor dessa variável precisamos fazer a desreferenciação:
+
+    var variavel3 int
+	var ponteiro *int
+
+	variavel3 = 100
+	ponteiro = &variavel3
+
+	fmt.Println(variavel3)
+	fmt.Println(ponteiro)
+
+	fmt.Println(*ponteiro)
+
+    ja neste trecho a variavel ponteiro foi desreferenciada com a utilização do * anterios a ele.
+
+    Dessa forma se a variável3 for alterada o ponteiro, como referencia o endereço de memória dela,
+    retornará o valor alterado caso utilizemos o fmt.Println(*ponteiro)
