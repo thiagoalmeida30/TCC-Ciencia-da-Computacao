@@ -1,0 +1,3 @@
+usuario := map[string]string
+
+Dentro dos conchetes é o tipo das chaves e fora é o tipo dos valores
