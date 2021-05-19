@@ -1,0 +1,135 @@
+Todas as computações em programação funcional são realizadas por meio da aplicação de funções
+a argumentos. Nem as sentenças de atribuição nem as variáveis, abundantes em programas escritos
+em liguagens imperativas, são necessárias em programas escritos em linguagens funcionais. Além disso
+processos repetitivos podem ser especificados com chamadas a funções recursivas, tornando as iterações (laços)
+desnecessárias. Esses conceitos básicos de programação funcional a tornam significativamente diferente da programação
+em linguagem imperativa.
+Conceitos de Linguagens de Programação - 11ed. por Robert W. Sebesta.
+
+============================================================================================================================
+
+Este paradigma trata a computação como uma avaliação de funções matemáticas.
+Este método enfatiza a aplicação de funções, as quais são tratadas como valores de
+primeira importância, ou seja, funções podem ser parâmetros ou valores de entrada para
+outras funções e podem ser os valores de retorno ou saída de uma função.
+2.4.2. Linguagens
+Exemplos de linguagens de programação que baseiam-se no modelo funcional:
+ Lambda (não implementado para computadores);
+ LISP;
+ Scheme (tentativa de simplificar e melhorar o LISP);
+ ML (Criada em universidade);
+ Miranda (também criada em universidade);
+ Haskell;
+
+https://cpsoftware.com.br/lnpg/intro-paradigmas.pdf
+Gustavo Jungthon
+1
+, Cristian Machado Goulart
+
+================================================================================================================
+
+A medida que aprendia sobre programação funcional, encontrava boas ideias para implementar concorrência, conforme havia imaginado,
+mas também descobri que ela clareava meu pensamento sobre o projeto de tipos e funções. Ela também me permitia escrever código mais
+conciso. A programação funcional me fez repensar onde os limites dos módulos deveriam ficar e como torná-los melhor para reutilização.
+Descobri que a comunidade de programação funcional estava criando sistemas de tipos mais poderosos e inovadores que ajudam a garantir
+a correção. Também concluí que a programação funcional é mais apropriada para muitos desafios únicos da nossa época, como trabalhar 
+conjuntos massivos de dados e mesmo assim não perder a agilidade já que os requisitos mudam cada vez mais rapidamente e os cronogramas ficam 
+cada vez mais curtos.
+
+Programação funcional para desenvolvedores java. 
+O'Reilly Novatec São Paulo 2019, Deam Wampler
+
+==================================================================================================================================================
+
+Sistemas concorrentes devem lidar com atividades separadas que estão
+progredindo ao mesmo tempo. Informalmente, dizemos que duas atividades são
+concorrentes se em algum momento ambas tenham sido iniciadas mas não
+terminadas, ou seja, estão em algum ponto intermediário da execução.
+Programação concorrente é a atividade de construir um programa contendo
+múltiplas atividades que progridem em paralelo. Atividades podem progredir em
+paralelo de duas maneiras:(1) sendo realmente executadas em paralelo, cada uma
+de posse de um processador diferente ou (2) tendo o processador se revezando
+entre as atividades, de forma que cada atividade possa fazer uso do processador
+durante um período de tempo e depois espere sua próxima chance de avançar na
+computação.
+A programação concorrente lida com atividades que, embora executem
+separadamente, estejam relacionadas de alguma forma. Em alguns casos, as
+atividades estão relacionadas por terem um objetivo comum, por estarem
+cooperando para solucionar um problema. Em outros casos, a relação entre as
+atividades é mais frouxa, estas podendo ser totalmente independentes em seus
+propósitos, mas precisando compartilhar os recursos pelos quais competem por
+estarem executando em um ambiente comum.
+
+Introdução à Programação Concorrente
+para a Internet
+Dilma Menezes da Silva
+Departamento de Ciência da Computação
+Instituto de Matemática e Estatística
+Universidade de São Paulo
+
+===========================================================================================================
+
+USADO USADO USADO USADO USADO USADO USADO USADO USADO USADO USADO USADO USADO USADO USADO USADO USADO USADO
+
+Os quatro paradigmas mais estabelecidos são o imperativo [Watt 1990], o
+lógico [Kowalski 1985], o funcional [Bird 1998] e o orientado a objetos [Meyer 1988].
+Cada um possui conceitos e características que influenciam um estilo próprio de
+programação. Nos paradigmas imperativo e funcional, o modelo computacional é o de
+uma função que, portanto, mapeia entradas em saídas de forma determinística.
+Entretanto, enquanto em um programa imperativo este mapeamento é direto, através de
+funções definidas como na matemática, em um programa imperativo tal mapeamento é
+indireto, via estados explicitamente modelados por variáveis globais e locais do
+programa em execução. A Figuras 1 ilustra o modelo computacional dos dois
+paradigmas. 
+
+Conceitos e Paradigmas de Programação via
+Projeto de Interpretadores
+Augusto Sampaio e Antônio Maranhão 
+https://www.cin.ufpe.br/~in1007/transparencias/jai/Jai2008Augusto.pdf
+
+===========================================================================================================================
+
+Como mencionado anteriormente, no paradigma funcional um programa estabelece uma
+relação clara e explícita entre entrada e saída.
+
+Conceitos e Paradigmas de Programação via
+Projeto de Interpretadores
+Augusto Sampaio e Antônio Maranhão 
+https://www.cin.ufpe.br/~in1007/transparencias/jai/Jai2008Augusto.pdf
+
+===========================================================================================================================
+
+Go tem sido fundamental no meu dia a dia escrevendo programas concorrentes e plataformas (systems programming). É uma linguagem que favorece a criação de programas paralelos, leves, rápidos, simples de entender, de distribuir (um simples binário compilado estaticamente) e de manter.
+
+(Página vii). 
+
+CONCORRÊNCIA COM GOROUTINES E CHANNELS
+
+(Página 112). 
+
+Programação concorrente é um tema bastante delicado e complexo. Se você já escreveu programas que dependiam de múltiplas threads ou múltiplos processos sabe que é uma tarefa que exige muita atenção e paciência, especialmente quando é necessário compartilhar estado entre as diferentes linhas de execução. A maior parte das linguagens de programação implementa threads de alguma forma, seja através de um escalonador próprio ou delegando o controle para o sistema operacional hospedeiro. O compartilhamento de estado em um programa multithreaded é normalmente implementado através de variáveis globais e/ou compartilhadas e exige algum mecanismo de trava ou semáforo para evitar condições de corrida (race conditions). Para evitar este tipo de problema, Go implementa um modelo
+
+(Página 112). 
+
+de concorrência baseado em goroutines que se comunicam através de channels, sendo que o próprio ambiente de execução garante que apenas uma goroutine acesse um channel em um determinado momento.
+
+(Página 113). 
+
+
+
+Do not communicate by sharing memory; instead, share memory by communicating (não comunique através de memória compartilhada; em vez disso, compartilhe memória através da comunicação).
+
+(http://golang.org/doc/effective_go.html)
+
+(Página 113). 
+(Página 113). 
+
+
+Uma goroutine é um processo muito leve que, na prática, é muito parecida com uma thread,
+porém as goroutines são gerenciadas pelo ambiente de execução da linguagem, e esse ambiente
+determina quando associar a thread do sistema operacional.
+
+
+Agora considere a seguinte função main() que chama a função imprimir() duas vezes com números diferentes:
+
+(Página 114). 
