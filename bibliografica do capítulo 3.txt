@@ -133,3 +133,58 @@ determina quando associar a thread do sistema operacional.
 Agora considere a seguinte função main() que chama a função imprimir() duas vezes com números diferentes:
 
 (Página 114). 
+
+
+
+==============================================================================================================================
+
+https://www.ime.usp.br/~amaris/mac-5742/reports/GoLang.pdf
+
+Channels são como conduítes tipados pelo qual pode-se enviar e receber informações de uma gouroutine a outra. 
+Existem dois tipos de channels, os não buferizados (unbuffered channels) e os buferizados (buffered channels)
+Suelen Goularte
+
+Unbuffered channels
+Channels não buferizados são usados para sincronização entre duas goroutines. Uma vez que uma
+goroutine coloca uma informação em um channel não buferizado, ela só será liberada quando outra
+goroutine pegar esta informação. Ou seja, neste tipo de channel, só pode existir uma informação por
+vez e esta deve ser enviada e entregue em uma mesma transação.
+
+
+
+
+
+
+Buffered channels
+Channels buferizados são usados para envio e recebimento assíncrono de informações entre 2 ou mais
+goroutines. Buferizar um channel significa informar seu tamanho na sua declaração e desta forma ele
+poderá conter 0 ou até seu limite de informações.
+Uma goroutine pode colocar informações em um channel até seu limite. Se um channel está cheio
+e uma goroutine tenta colocar informações nele, ela só será liberada quando liberar um espaço e puder
+completar seu envio.
+Uma goroutine pode pegar informações de um channel enquanto ele for diferente houver, se uma
+goroutine tenta pegar uma informação porém o channel está vazio, ela estará bloqueada até que haja
+informação a ser recuperada, e então o resgate da informação é completo e a goroutine é liberada.
+
+Uma Goroutine pode pegar informações de um channel enquanto o canal não estiver vazio, se uma goroutine tentar pegar uma informação
+e o canal estiver vazio, ela ficara bloqueada até que haja informação a ser recuperada, então, o resgate da informação
+será completado e a goroutine é liberada.
+
+=========================================================================================================
+
+Channels:
+
+Executar diferentes goroutines concorrentemente é muito importante e problemas que exigem alta performance e grande eficiência no uso de recursos de 
+processamento são tratados de forma mais concistente. 
+Raramente as gourrotinas são disparadas de forma que não há interação uma com as outras, Os channels foram pensados e criados como uma abstração para viabilizar esta comunicação de forma segura e eficiente.
+Um channel é um canal que conduz informações de um tipo válido em GO.
+A função make() é utilizada para criar um novo canal. Exemplo, para criar um canal que capaz de trafegar dados do tipo inteiros utilizamos o comando c:= make (canh int
+
+
+
+Inicialmente criamos um canal para trafegar valores do tipo int.
+Em seguida, disparamos uma goroutine executando a função produzir(), que recebe um canal como argumento e simplismente envia um número inteiro par o canal  recebido.
+Por padrão, operações de envio e recebimento em um canal bloqueiam até que o outro lado esta pronto. Este fato permite que a própria comunicação entre duas goroutines garanta a sincronização entre elas,
+sem que nenhum mecanismo de travas seja necessário.
+Por este motivo, a próxima linha da função main(), que recebe um valor do canal, fará com que a linha de execução principal fique bloqueada até que algum valor seja enviado para o canal c. Assim que o valor seja enviado pela função produzir(), a linha de execução principal será então desbloqueada, o valor 33 será consumido, atrbuído à variável
+valor e impresso no console.
